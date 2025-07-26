@@ -1,14 +1,20 @@
 # Agent Communication System
 
 ## エージェント構成
-- **PRESIDENT** (別セッション): 統括責任者
-- **boss1** (multiagent:agents): チームリーダー
-- **worker1,2,3** (multiagent:agents): 実行担当
+- **PRESIDENT** (別セッション): プロジェクト統括・タスク分析・戦略立案
+- **boss1** (multiagent:agents): チーム管理・タスク調整・品質確認
+- **worker1,2,3** (multiagent:agents): 並列作業実行・相互連携・完了確認
+
+## マルチエージェントシステムの特徴
+- **汎用タスク対応**: あらゆる種類のタスクを自動分析・分解・実行
+- **並列処理最適化**: ワーカー間の効率的な負荷分散と連携
+- **品質保証機能**: 各段階での品質確認と統合レビュー
+- **動的進捗管理**: リアルタイムでの進捗把握と調整指示
 
 ## あなたの役割
-- **PRESIDENT**: @instructions/president.md
-- **boss1**: @instructions/boss.md
-- **worker1,2,3**: @instructions/worker.md
+- **PRESIDENT**: @instructions/president.md（タスク分析・分解・指示生成）
+- **boss1**: @instructions/boss.md（タスク管理・ワーカー調整・品質確認）
+- **worker1,2,3**: @instructions/worker.md（並列作業・相互連携・完了確認）
 
 ## メッセージ送信
 ```bash
@@ -16,4 +22,28 @@
 ```
 
 ## 基本フロー
-PRESIDENT → boss1 → workers → boss1 → PRESIDENT 
+
+### 汎用タスク処理フロー
+```
+ユーザータスク → PRESIDENT（分析・分解・戦略策定）
+                     ↓
+                boss1（タスク調整・ワーカー配分）
+                     ↓
+           worker1,2,3（並列作業実行）
+                     ↓
+                boss1（品質確認・統合）
+                     ↓
+                PRESIDENT（最終承認・報告）
+```
+
+### デモモード
+```
+「あなたはpresidentです。指示書に従って」
+→ PRESIDENT → boss1 → workers → boss1 → PRESIDENT
+```
+
+## 対応可能なタスク例
+- **開発タスク**: コード作成、テスト、デバッグ、レビュー
+- **調査・分析**: 情報収集、データ分析、レポート作成
+- **創作・企画**: アイデア創出、企画立案、プロトタイプ作成
+- **計算・処理**: データ処理、計算実行、結果統合
